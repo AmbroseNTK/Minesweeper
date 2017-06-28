@@ -87,11 +87,6 @@ namespace Minesweeper
                     CellMap[anotherPoint[i]].CellType = CellTypes.NUMERIC;
                     CellMap[anotherPoint[i]].setNumber(c);
                 }
-                /*
-                else
-                {
-                    CellMap[anotherPoint[i]].CellType =CellTypes.EMPTY;
-                }*/
             }
         }
         public void open(Point mid)
@@ -114,6 +109,17 @@ namespace Minesweeper
                 }
             }
 
+        }
+        public bool checkWinner()
+        {
+
+            foreach (Point p in CellMap.Keys)
+            {
+                if (cellMap[p].CellType != CellTypes.MINE && CellMap[p].CellTypeBehavior == CellTypes.UNSELECT)
+                    return false;
+            }
+            return true;
+          
         }
         public List<Point> getCellAround(Point p0)
         {

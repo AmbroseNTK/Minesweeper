@@ -13,6 +13,8 @@ namespace Minesweeper
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         private ChessBoard board;
+        WinnerForm winner;
+        GameOver gameOverForm;
         private int boardWidth;
         private int boardHeight;
         private int percentMines;
@@ -58,8 +60,9 @@ namespace Minesweeper
         {
             timer1.Stop();
             firstClick = true;
-            MessageBox.Show("GAME OVER");
-            createNewGame();
+            gameOverForm = new GameOver();
+            gameOverForm.MyGame = this;
+            gameOverForm.ShowDialog();
         }
         public void setFlag()
         {
@@ -81,6 +84,8 @@ namespace Minesweeper
                 firstClick = false;
             }
             board.open(first);
+            if (board.checkWinner())
+                setWinner();
         }
         private void showNumMine()
         {
@@ -101,9 +106,14 @@ namespace Minesweeper
         {
             OptionForm option = new OptionForm();
             option.MyGame = this;
-            option.Show();
+            option.ShowDialog();
         }
-
+        public void setWinner()
+        {
+            winner = new WinnerForm();
+            winner.MyGame = this;
+            winner.ShowDialog();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.AddSeconds(1);
@@ -117,6 +127,10 @@ namespace Minesweeper
                 lbTime.Caption = "Time: " + time.Hour.ToString() + "h" + time.Minute.ToString() + "m" + time.Second.ToString() + "s";
             }
             
+        }
+        public DateTime getTime()
+        {
+            return time;
         }
     }
 }

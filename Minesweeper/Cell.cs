@@ -154,5 +154,15 @@ namespace Minesweeper
                 }
             }
         }
+
+        private void Cell_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Cell_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

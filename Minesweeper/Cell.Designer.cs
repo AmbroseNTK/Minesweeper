@@ -64,6 +64,8 @@
             this.Name = "Cell";
             this.Size = new System.Drawing.Size(48, 48);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseClick);
+            this.MouseLeave += new System.EventHandler(this.Cell_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.Cell_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
