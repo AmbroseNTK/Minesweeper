@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -36,7 +37,7 @@
             this.btNewGame = new DevExpress.XtraBars.BarButtonItem();
             this.btOption = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lbMine = new DevExpress.XtraBars.BarStaticItem();
             this.lbTime = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -62,7 +63,7 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btNewGame,
-            this.barStaticItem1,
+            this.lbMine,
             this.lbTime,
             this.btOption});
             this.barManager1.MaxItemId = 4;
@@ -102,19 +103,19 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.lbMine),
             new DevExpress.XtraBars.LinkPersistInfo(this.lbTime)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // barStaticItem1
+            // lbMine
             // 
-            this.barStaticItem1.Caption = "Mines:";
-            this.barStaticItem1.Id = 1;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.lbMine.Caption = "Mines:";
+            this.lbMine.Id = 1;
+            this.lbMine.Name = "lbMine";
+            this.lbMine.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // lbTime
             // 
@@ -167,6 +168,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -185,7 +187,7 @@
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btNewGame;
         private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem lbMine;
         private DevExpress.XtraBars.BarStaticItem lbTime;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

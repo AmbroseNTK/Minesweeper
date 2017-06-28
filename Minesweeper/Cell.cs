@@ -31,17 +31,18 @@ namespace Minesweeper
             setCellTypeBehavior(CellTypes.UNSELECT);
             CellType = CellTypes.EMPTY;
         }
-        public Cell(Point position, CellTypes cellType)
+        public Cell(Point index, Point position, CellTypes cellType)
         {
             InitializeComponent();
             setCellTypeBehavior(CellTypes.UNSELECT);
             CellType = cellType;
             this.Location = position;
+            Index = index;
            
         }
         public void setCellTypeBehavior(CellTypes cellType)
         {
-            CellTypeBehavior = cellType;
+                CellTypeBehavior = cellType;
             switch (cellType)
             {
                 case CellTypes.UNSELECT:
@@ -72,9 +73,10 @@ namespace Minesweeper
                     this.Enabled = false;
                     lbNum.Show();
                     pictureBox1.Hide();
-                    ForeColor = Color.White;
+                    BackColor = Color.White;
                     break;
             }
+            
         }
         public void setNumber(int num)
         {
@@ -83,7 +85,7 @@ namespace Minesweeper
             switch (Number)
             {
                 case 1:
-                    lbNum.ForeColor = Color.AliceBlue;
+                    lbNum.ForeColor = Color.DodgerBlue;
                     break;
                 case 2:
                     lbNum.ForeColor = Color.Navy;
@@ -140,6 +142,7 @@ namespace Minesweeper
             }
             if (e.Button == MouseButtons.Left)
             {
+                MyGame.setFirstClick(this.index);
                 if (cellTypeBehavior == CellTypes.UNSELECT && (cellType == CellTypes.EMPTY||cellType==CellTypes.NUMERIC))
                 {
                     setCellTypeBehavior(cellType);

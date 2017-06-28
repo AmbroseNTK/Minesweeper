@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel4 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel5 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel6 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel1 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel2 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel3 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
             this.selectMode = new DevExpress.XtraEditors.TrackBarControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -52,16 +52,16 @@
             this.selectMode.Name = "selectMode";
             this.selectMode.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.selectMode.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            trackBarLabel4.Label = "Easy";
-            trackBarLabel4.Value = 10;
-            trackBarLabel5.Label = "Medium";
-            trackBarLabel5.Value = 45;
-            trackBarLabel6.Label = "Hard";
-            trackBarLabel6.Value = 80;
+            trackBarLabel1.Label = "Easy";
+            trackBarLabel1.Value = 10;
+            trackBarLabel2.Label = "Medium";
+            trackBarLabel2.Value = 45;
+            trackBarLabel3.Label = "Hard";
+            trackBarLabel3.Value = 80;
             this.selectMode.Properties.Labels.AddRange(new DevExpress.XtraEditors.Repository.TrackBarLabel[] {
-            trackBarLabel4,
-            trackBarLabel5,
-            trackBarLabel6});
+            trackBarLabel1,
+            trackBarLabel2,
+            trackBarLabel3});
             this.selectMode.Properties.Maximum = 80;
             this.selectMode.Properties.Minimum = 10;
             this.selectMode.Properties.ShowLabels = true;

@@ -16,16 +16,21 @@ namespace Minesweeper
         private int boardWidth;
         private int boardHeight;
         private int percentMines;
-
+        private int numMine;
+        private int maxNumMine;
+        private bool firstClick;
         public int BoardWidth { get => boardWidth; set => boardWidth = value; }
         public int BoardHeight { get => boardHeight; set => boardHeight = value; }
         public int PercentMines { get => percentMines; set => percentMines = value; }
+        public int NumMine { get => numMine; set => numMine = value; }
+
         private DateTime time;
         public Form1()
         {
             InitializeComponent();
             BoardWidth = 10;
             BoardHeight = 10;
+            percentMines = 20;
             Cell.MyGame = this;
             createNewGame();
         }
@@ -33,27 +38,53 @@ namespace Minesweeper
         {
             if (board != null)
                 Controls.Remove(board);
-            board = new ChessBoard(BoardWidth, BoardHeight);
+            board = new ChessBoard(BoardWidth, BoardHeight,percentMines);
             board.Location = new Point(0, 0);
             board.Dock = DockStyle.Fill;
             board.BringToFront();
             if(!Controls.Contains(board))
                 Controls.Add(board);
+            firstClick = true;
             time = new DateTime();
             timer1.Start();
+        }
+        public void setNumMine(int num)
+        {
+            NumMine = num;
+            maxNumMine = numMine;
+            showNumMine();
         }
         public void gameOver()
         {
             timer1.Stop();
+            firstClick = true;
             MessageBox.Show("GAME OVER");
+            createNewGame();
         }
         public void setFlag()
         {
-
+            if (numMine > 0)
+                numMine--;
+            showNumMine();
         }
         public void unsetFlag()
         {
-
+            if(numMine<maxNumMine)
+                numMine++;
+            showNumMine();
+        }
+        public void setFirstClick(Point first)
+        {
+            if (firstClick)
+            {
+                board.createMines(first);
+                firstClick = false;
+            }
+            board.open(first);
+        }
+        private void showNumMine()
+        {
+            lbMine.Caption = "Mines: " + numMine.ToString();
         }
         public void resizeWindows(int width, int height)
         {
