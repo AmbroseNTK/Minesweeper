@@ -79,7 +79,7 @@
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btNewGame),
             new DevExpress.XtraBars.LinkPersistInfo(this.btOption)});
-            this.bar1.Text = "Tools";
+            this.bar1.Text = "Menu";
             // 
             // btNewGame
             // 
@@ -172,7 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Minesweeper - Nguyen Tuan Kiet";
+            this.Text = "Nguyen Tuan Kiet HSU16 - MINESWEEPER";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

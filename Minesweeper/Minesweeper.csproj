@@ -142,5 +142,9 @@
   <ItemGroup>
     <None Include="bin\Debug\gameover.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScreenShots\screenShot1.PNG" />
+    <Content Include="ScreenShots\screenShot2.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
